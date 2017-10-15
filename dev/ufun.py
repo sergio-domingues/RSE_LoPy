@@ -28,9 +28,10 @@ def flash_led_to(color=GREEN, t1=1):
     set_led_to(OFF)
 
 def connect_to_wifi(wifi_ssid, wifi_passwd):
-	wlan = WLAN(mode=WLAN.STA)
 
-	for ltry in range(3):
+    wlan = WLAN(mode=WLAN.STA)
+
+    for ltry in range(3):
 	    print("Connecting to: "+wifi_ssid+". Try "+str(ltry))
 	    nets = wlan.scan()
 	    for net in nets:
@@ -49,6 +50,6 @@ def connect_to_wifi(wifi_ssid, wifi_passwd):
 	        print('Cannot find network '+wifi_ssid)
 	        flash_led_to(RED, 1)
 
-	if not wlan.isconnected():
+    if not wlan.isconnected():
 	    print('Cannot connect to network '+wifi_ssid+'. Quitting!!!')
 	    sys.exit(1)

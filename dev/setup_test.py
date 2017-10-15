@@ -10,7 +10,7 @@ def set_led_to(color=GREEN):
     pycom.heartbeat(False) # Disable the heartbeat LED
     pycom.rgbled(color)
 
-def flash_led_to(color=GREEN, t1=1):
+def flash_led_to(color=GREEN, t1=2):
     set_led_to(color)
     time.sleep(t1)
     set_led_to(OFF)
